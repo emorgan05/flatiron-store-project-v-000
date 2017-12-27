@@ -7,9 +7,4 @@ class User < ActiveRecord::Base
   has_many :carts
   has_one :current_cart, class_name: "Cart"
 
-  # def current_cart
-  #   @current_cart ||= self.carts.create
-  # end
-  #
-  # helper_method :current_cart
 end

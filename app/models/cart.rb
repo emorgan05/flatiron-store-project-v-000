@@ -7,7 +7,7 @@ class Cart < ActiveRecord::Base
     sum = 0
 
     self.items.each do |item|
-      sum = sum + item.price
+      sum = sum + (item.price * self.line_items.find_by(item_id: item.id).quantity)
     end
 
     sum
